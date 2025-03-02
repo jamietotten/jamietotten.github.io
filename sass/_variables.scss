@@ -1,0 +1,49 @@
+// Colour defaults
+$dark: #222;
+$darker: #111;
+// $white: #FFF;
+// $blue: #49BAF4;
+// $pink: #F0F;
+
+$white:  #E1E1E1;
+$navy:   #03315A;
+$blue:   #7EA5BB;
+$orange: #F37129;
+$black:  #000F16;
+
+
+// Box colours
+$box-bg: $blue;
+$box-bg-slide: $orange;
+$section-bg: $white;
+
+
+// Breakpoints
+$mobile: 600px;
+$tablet: 768px;
+$desktop: 1024px;
+
+
+// Visibility
+$hide-for-small: $mobile;
+
+
+// FONTS
+$wire: 'Wire One', sans-serif;
+// font-family: 'Fredericka the Great', cursive;
+$six: 'Six Caps', sans-serif;
+// font-family: 'Comfortaa', cursive;
+// font-family: 'Belgrano', serif;
+$quicksand: 'Quicksand', sans-serif; // close
+// font-family: 'Josefin Slab', serif;
+// font-family: 'Russo One', sans-serif;
+// font-family: 'Monoton', cursive;
+// font-family: 'Sarpanch', sans-serif;
+// font-family: 'Julius Sans One', sans-serif;
+$iceland: 'Iceland', cursive;
+// font-family: 'Electrolize', sans-serif;
+// font-family: 'Montserrat Subrayada', sans-serif;
+
+// $sans-serif: 'Quicksand', sans-serif; // close
+$sans-serif: 'Helvetica', sans-serif; // close
+$sans-serif-alt: 'Quicksand', sans-serif; // close

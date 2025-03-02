@@ -1,0 +1,559 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/* line 15, ../sass/main.scss */
+html {
+  color: #E1E1E1;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 29, ../sass/main.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 34, ../sass/main.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+/* line 43, ../sass/main.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+/* line 58, ../sass/main.scss */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 71, ../sass/main.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 81, ../sass/main.scss */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+/* line 89, ../sass/main.scss */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+@font-face {
+  font-family: 'nevada';
+  src: url("fonts/nevada.eot");
+}
+@font-face {
+  font-family: 'nevada';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,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) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 12, ../sass/_fonts.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'nevada';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 26, ../sass/_fonts.scss */
+.icon-youtube-play:before {
+  content: "\e607";
+}
+
+/* line 29, ../sass/_fonts.scss */
+.icon-play2:before {
+  content: "\e605";
+}
+
+/* line 32, ../sass/_fonts.scss */
+.icon-headphones:before {
+  content: "\e600";
+}
+
+/* line 35, ../sass/_fonts.scss */
+.icon-mail:before {
+  content: "\e601";
+}
+
+/* line 38, ../sass/_fonts.scss */
+.icon-download:before {
+  content: "\e602";
+}
+
+/* line 41, ../sass/_fonts.scss */
+.icon-play:before {
+  content: "\e603";
+}
+
+/* line 44, ../sass/_fonts.scss */
+.icon-soundcloud:before {
+  content: "\e604";
+}
+
+/* line 22, ../sass/_nevada.scss */
+.section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* line 34, ../sass/_nevada.scss */
+.section.speaklow {
+  background-image: url("../img/bg_speak_low.jpg");
+}
+/* line 38, ../sass/_nevada.scss */
+.section.drum {
+  background-image: url("../img/bg_drum.JPG");
+}
+/* line 42, ../sass/_nevada.scss */
+.section.sign {
+  background-image: url("../img/bg_sign.jpg");
+}
+/* line 46, ../sass/_nevada.scss */
+.section.tibet {
+  background-image: url("../img/bg_tibet.JPG");
+}
+/* line 50, ../sass/_nevada.scss */
+.section.vinyl {
+  background-image: url("../img/bg_vinyl.jpg");
+}
+/* line 59, ../sass/_nevada.scss */
+.section.no-touch {
+  background-attachment: fixed;
+}
+/* line 63, ../sass/_nevada.scss */
+.section.touch {
+  background-attachment: scroll;
+}
+
+/* line 77, ../sass/_nevada.scss */
+.vert-wrapper, .home {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+/* line 81, ../sass/_nevada.scss */
+.vert-center, .section-wrapper .section-container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* line 87, ../sass/_nevada.scss */
+.section-wrapper {
+  background-color: #000f16;
+  -webkit-transition: all 2s ease 2s;
+          transition: all 2s ease 2s;
+  height: 100%;
+}
+/* line 92, ../sass/_nevada.scss */
+.fade .section-wrapper {
+  background-color: rgba(0, 15, 22, 0.65);
+}
+/* line 98, ../sass/_nevada.scss */
+.section-wrapper .section-container {
+  text-align: center;
+}
+
+/* line 107, ../sass/_nevada.scss */
+.ui-elements .service-wrap {
+  position: relative;
+}
+/* line 111, ../sass/_nevada.scss */
+.ui-elements .services {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.35s;
+          transition: transform 0.35s;
+  z-index: 1000;
+}
+
+/* line 145, ../sass/_nevada.scss */
+.nav {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+/* line 153, ../sass/_nevada.scss */
+.nav a:link, .nav a:visited, .nav a:active {
+  font-family: "Iceland", "Helvetica", Arial, sans-serif;
+  color: rgba(126, 165, 187, 0);
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 0.2em 0.5em;
+  display: block;
+  -webkit-transition: all 2s ease 3s;
+          transition: all 2s ease 3s;
+}
+/* line 162, ../sass/_nevada.scss */
+.fade .nav a:link, .fade .nav a:visited, .fade .nav a:active {
+  color: #FFFFFF;
+}
+/* line 168, ../sass/_nevada.scss */
+.nav a:hover {
+  text-shadow: #f00 1px -1px 0px;
+  -webkit-transition: all .2s ease .3s;
+          transition: all .2s ease .3s;
+}
+/* line 173, ../sass/_nevada.scss */
+.nav a em {
+  font-style: normal;
+  display: block;
+  line-height: 1;
+  color: rgba(126, 165, 187, 0);
+  -webkit-transition: all 4s ease 1s;
+          transition: all 4s ease 1s;
+}
+/* line 181, ../sass/_nevada.scss */
+.touch .fade .nav a em {
+  -webkit-transition: all 2s ease 3s;
+          transition: all 2s ease 3s;
+  color: #FFFFFF;
+}
+/* line 190, ../sass/_nevada.scss */
+.nav a:hover em {
+  color: rgba(126, 165, 187, 0.7);
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+  -webkit-transition-duration: 0.35s;
+          transition-duration: 0.35s;
+}
+/* line 197, ../sass/_nevada.scss */
+.nav a span {
+  font-size: 3em;
+}
+/* line 202, ../sass/_nevada.scss */
+.nav.inline-list {
+  position: absolute;
+  top: 1.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+/* line 211, ../sass/_nevada.scss */
+.nav.inline-list ul, .nav.inline-list li {
+  list-style-type: none;
+}
+/* line 214, ../sass/_nevada.scss */
+.nav.inline-list a span {
+  display: block;
+}
+/* line 220, ../sass/_nevada.scss */
+.nav .items {
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* line 238, ../sass/_nevada.scss */
+.home {
+  overflow: hidden;
+  text-align: center;
+}
+/* line 245, ../sass/_nevada.scss */
+.home svg {
+  width: 70%;
+  opacity: 0;
+  -webkit-transition: all 2s ease 2s;
+          transition: all 2s ease 2s;
+}
+/* line 251, ../sass/_nevada.scss */
+.home svg g line, .home svg g path, .home svg g circle {
+  stroke: #FFFFFF;
+  -webkit-transition: all 4s ease 2s;
+          transition: all 4s ease 2s;
+}
+/* line 256, ../sass/_nevada.scss */
+.fade .home svg g line, .fade .home svg g path, .fade .home svg g circle {
+  stroke: #FFFFFF;
+}
+/* line 263, ../sass/_nevada.scss */
+.fade .home svg {
+  opacity: 1;
+  width: 80%;
+}
+
+/* line 271, ../sass/_nevada.scss */
+.bio {
+  background-color: rgba(225, 225, 225, 0.1);
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  font-family: "Iceland", "Helvetica", Arial, sans-serif;
+  max-height: 50vh;
+  overflow-y: scroll;
+  border: 1px solid #ffffff30;
+  padding: 2rem;
+  opacity: 0;
+  -webkit-transition: all 2.5s ease 3s;
+          transition: all 2.5s ease 3s;
+}
+/* line 284, ../sass/_nevada.scss */
+.fade .bio {
+  opacity: 1;
+}
+/* line 288, ../sass/_nevada.scss */
+.bio p {
+  font-size: 1.2rem;
+}
+/* line 290, ../sass/_nevada.scss */
+.bio p:first-of-type {
+  margin-top: 0;
+  font-size: 2rem;
+  line-height: 96%;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers:
+ */
+/* line 111, ../sass/main.scss */
+.hidden {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+/* line 120, ../sass/main.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+/* line 137, ../sass/main.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+/* line 151, ../sass/main.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 167, ../sass/main.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 173, ../sass/main.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  /* line 201, ../sass/main.scss */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+       http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 211, ../sass/main.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 216, ../sass/main.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 220, ../sass/main.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  /* line 229, ../sass/main.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* line 234, ../sass/main.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  /* line 245, ../sass/main.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 249, ../sass/main.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 254, ../sass/main.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  /* line 258, ../sass/main.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 265, ../sass/main.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
